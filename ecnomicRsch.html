@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="FTP.js"></script>
+    <script>
+
+    let ETFREF = new StatementBuilder()
+    .setId(1)
+    .setDesc('ETF sector rotation references')
+    .setType('Question')
+    .setRoot('null')
+    .setBranch(['https://www.youtube.com/watch?v=85IRL__3oR8&ab_channel=DarthTrVader'])
+    .setReference('null')
+    .setReferee('').build();
+
+    let ETFInv = new StatementBuilder()
+    .setId(2)
+    .setDesc('Focus on ETF sector rotation')
+    .setType('Question')
+    .setRoot('null')
+    .setBranch('null')
+    .setReference('null')
+    .setReferee('').build();
+    ETFInv.setReference(ETFREF);
+    ETFREF.setReferee(ETFInv);
+   // console.log(ETFREF)
+    console.log(ETFInv)
+        // ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+</html>

@@ -14,19 +14,49 @@ class Rectangle {
     }
 
     const square = new Rectangle(10, 10);
-    console.log(square.area);
+   // console.log(square.area);
 
     class Statement {
-        constructor(id, type, root, branch, referer, referee)
+        constructor(id, type, root, branch, reference, referee, desc)
         {
             this.id = id;
+            this.desc = desc;
             this.type = type;
             this.root = root;
             this.branch = branch;
             this.referee=referee;
-            this.referer=referer;
-        }
+            this.reference=reference;
+        };
 
+        setId(id){
+            this.id = id;
+        };
+
+        setDesc (desc){
+            this.desc = desc;
+            
+        };
+        setType (type){
+            this.type = type;
+            
+        };
+        setRoot(root){
+            this.root = root;
+            
+        };
+        setBranch(branch){
+            this.branch = branch;
+            
+        };
+        setReference(reference){
+            this.reference = reference;
+            
+        };
+
+        setReferee (referee){
+            this.referee = referee;
+            
+        }
     }
 
     let StatementBuilder = function () {
@@ -34,6 +64,10 @@ class Rectangle {
         return {
             setId: function (id){
                 this.id = id;
+                return this;
+            },
+            setDesc: function (desc){
+                this.desc = desc;
                 return this;
             },
             setType: function (type){
@@ -48,8 +82,8 @@ class Rectangle {
                 this.branch = branch;
                 return this;
             },
-            setReferer: function (referer){
-                this.referer = referer;
+            setReference: function (reference){
+                this.reference = reference;
                 return this;
             },
             setReferee: function (referee){
@@ -57,13 +91,13 @@ class Rectangle {
                 return this;
             },
             build: function () {
-            return new Statement(this.id, this.type, this.root, this.branch, this.referee, this.referer);
+            return new Statement(this.id, this.type, this.root, this.branch, this.referee, this.reference, this.desc);
         }
         };
     };
 
         //var expStmt = new Statement(["r1"],["b1"]);
-        let bltStmt = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReferer('referer').setReferee('').build();
-        let bltStmt2 = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReferer(bltStmt).setReferee('referee').build();
+        let bltStmt = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference('referer').setReferee('').build();
+        let bltStmt2 = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference(bltStmt).setReferee('referee').build();
         //console.log(expStmt);
-        console.log(bltStmt2);
+        //console.log(bltStmt2);
