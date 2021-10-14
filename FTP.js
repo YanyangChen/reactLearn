@@ -30,71 +30,75 @@ class Rectangle {
 
         setId(id){
             this.id = id;
+            return this;
         };
 
-        setDesc (desc){
+        setDesc(desc){
             this.desc = desc;
-            
+            return this;
         };
-        setType (type){
+        setType(type){
             this.type = type;
-            
+            return this;
         };
         setRoot(root){
             this.root = root;
-            
+            return this;
         };
         setBranch(branch){
             this.branch = branch;
-            
+            return this;
         };
         setReference(reference){
             this.reference = reference;
-            
+            return this;
+        };
+        setReferee(referee){
+            this.referee = referee;
+            return this;
         };
 
-        setReferee (referee){
-            this.referee = referee;
-            
-        }
+        
     }
 
-    let StatementBuilder = function () {
+    
+
+    // let StatementBuilder = function () {
         
-        return {
-            setId: function (id){
-                this.id = id;
-                return this;
-            },
-            setDesc: function (desc){
-                this.desc = desc;
-                return this;
-            },
-            setType: function (type){
-                this.type = type;
-                return this;
-            },
-            setRoot: function (root){
-                this.root = root;
-                return this;
-            },
-            setBranch: function (branch){
-                this.branch = branch;
-                return this;
-            },
-            setReference: function (reference){
-                this.reference = reference;
-                return this;
-            },
-            setReferee: function (referee){
-                this.referee = referee;
-                return this;
-            },
-            build: function () {
-            return new Statement(this.id, this.type, this.root, this.branch, this.referee, this.reference, this.desc);
-        }
-        };
-    };
+    //     return {
+    //         setId: function (id){
+    //             this.id = id;
+    //             return this;
+    //         },
+    //         setDesc: function (desc){
+    //             this.desc = desc;
+    //             return this;
+    //         },
+    //         setType: function (type){
+    //             this.type = type;
+    //             return this;
+    //         },
+    //         setRoot: function (root){
+    //             this.root = root;
+    //             return this;
+    //         },
+    //         setBranch: function (branch){
+    //             this.branch = branch;
+    //             return this;
+    //         },
+    //         setReference: function (reference){
+    //             this.reference = reference;
+    //             return this;
+    //         },
+    //         setReferee: function (referee){
+    //             this.referee = referee;
+    //             return this;
+    //         },
+    //         build: function () {
+    //         return new Statement(this.id, this.type, this.root, this.branch, this.referee, this.reference, this.desc);
+    //     }
+    //     };
+    // };
 
         //var expStmt = new Statement(["r1"],["b1"]);
         let bltStmt = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference('referer').setReferee('').build();

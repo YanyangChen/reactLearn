@@ -7,24 +7,66 @@
 <body>
     <script src="FTP.js"></script>
     <script>
-
-    let ETFREF = new StatementBuilder()
-    .setId(1)
+      
+    let ETFREF = new Statement().setId(1)
     .setDesc('ETF sector rotation references')
     .setType('Question')
     .setRoot('null')
-    .setBranch(['https://www.youtube.com/watch?v=85IRL__3oR8&ab_channel=DarthTrVader'])
+    .setBranch([{
+            desc: 'spy ETFs',
+            US_ETF_Sectors:[
+            'Energy XLE',
+            'Financial Service XLF',
+            'Communication Service XLC',
+            'Real Estate XLRE',
+            'Industrial XLI',
+            'Basic Materials XLB',
+            'Tech XLK',
+            'Consumer Discretionary XLY',
+            'Healthcare XLV',
+            'Consumer Staples XLP',
+            'Utilities XLU'
+            ],
+            US_SMALL_CAP_ETF_Sectors:[
+            'Energy PSCE',
+            'Financial Service PSCF',
+            'Communication Service PSCD',
+            'Industrial PSCI',
+            'Basic Materials PSCM',
+            'Tech PSCT',
+            'Healthcare PSCH',
+            'Consumer Staples PSCC',
+            'Utilities PSCU'
+            ],
+            GLOBAL_ETF_Sectors:[
+            'Energy IXC',
+            'Financial Service IXG',
+            'Industrial EXI',
+            'Telecommunications IXP',
+            'Basic Materials MXI',
+            'Tech IXN',
+            'Consumer Discretionary XLY',
+            'Healthcare IXJ',
+            'Consumer Staples KXI',
+            'Utilities JXI'
+            ],
+            url:'https://www.youtube.com/watch?v=85IRL__3oR8&t=1s&ab_channel=DarthTrVader'
+        },
+        {
+            desc: '机构trader已经全面自动化掌握了交易算法，建模，高速交易精确到秒级；散户主要关注长线，大环境，ETF, 板块轮动',
+            url:'https://www.youtube.com/watch?v=xnIYIpXKvNM&t=398s&ab_channel=%E5%B0%8FLin%E8%AF%B4'
+        }
+    ])
     .setReference('null')
-    .setReferee('').build();
+    .setReferee('')
 
-    let ETFInv = new StatementBuilder()
-    .setId(2)
+    let ETFInv = new Statement().setId(2)
     .setDesc('Focus on ETF sector rotation')
     .setType('Question')
     .setRoot('null')
     .setBranch('null')
     .setReference('null')
-    .setReferee('').build();
+    .setReferee('')
     ETFInv.setReference(ETFREF);
     ETFREF.setReferee(ETFInv);
    // console.log(ETFREF)
