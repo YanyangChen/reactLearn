@@ -7,12 +7,34 @@
 <body>
     <script src="FTP.js"></script>
     <script>
+
+    let FinNews = new Statement().setId('FinNews')
+    .setDesc("News from Bloomberg")
+    .setBranch([{
+        d20211015: "Bank of America Corp. Chief Executive \
+Officer Brian Moynihan joined fellow finance-industry \
+leaders like Morgan Stanley CEO James Gorman and Goldman Sachs Group Inc.’s John Waldron in predicting that inflation will stick around.\
+crude oil advanced and base metals have soared, with European smelters the latest casualties in the global energy crisis. A gauge of six industrial metals hit an all-time high on the London Metal Exchange.",
+        url: "https://www.bloomberg.com/news/articles/2021-10-14/stocks-set-to-climb-on-earnings-season-optimism-markets-wrap?srnd=premium-asia"
+        }])
       
-    let ETFREF = new Statement().setId(1)
+    let ETFREF = new Statement().setId('ETFREF')
     .setDesc('ETF sector rotation references')
     .setType('Question')
     .setRoot('null')
-    .setBranch([{
+    .setBranch([
+    Ibank = new Statement().setId('IBank').setBranch([
+    new Statement().setId('Goldman-20211015')
+    .setDesc('Goldman Is ‘Doubling Down’ on Technology Investing, Dees Says')
+    .setUrl('https://www.bloomberg.com/news/articles/2021-10-13/goldman-is-doubling-down-on-technology-investing-dees-says')
+    ])
+    ,new Statement().setId('IMF')
+    .setDesc("Treasury Secretary Janet Yellen warned that a scandal over \
+the credibility of rankings of countries’ business climates could hurt \
+confidence in the International Monetary Fund and World Bank unless the \
+institutions take strong actions to prevent misconduct and support whistle-blowers.")
+            .setUrl("https://www.bloomberg.com/news/articles/2021-10-14/yellen-says-imf-world-bank-risk-loss-of-confidence-from-scandal?srnd=fixed-income")
+            ,FinNews, ETF_Tickets = {
             desc: 'spy ETFs',
             US_ETF_Sectors:[
             'Energy XLE',
@@ -64,7 +86,7 @@
     .setReference('null')
     .setReferee('')
 
-    let ETFInv = new Statement().setId(2)
+    let ETFInv = new Statement().setId('ETFInv')
     .setDesc('Focus on ETF sector rotation')
     .setType('Question')
     .setRoot('null')
@@ -74,6 +96,7 @@
     ETFInv.setReference(ETFREF);
     ETFREF.setReferee(ETFInv);
    // console.log(ETFREF)
+   Ibank.setReference(ETF_Tickets);
     console.log(ETFInv)
         // ReactDOM.render(<App />, document.getElementById("root"));
     </script>

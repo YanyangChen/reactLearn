@@ -37,6 +37,10 @@ class Rectangle {
             this.desc = desc;
             return this;
         };
+        setUrl(url){
+            this.url = url;
+            return this;
+        };
         setType(type){
             this.type = type;
             return this;
@@ -101,7 +105,7 @@ class Rectangle {
     // };
 
         //var expStmt = new Statement(["r1"],["b1"]);
-        let bltStmt = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference('referer').setReferee('').build();
-        let bltStmt2 = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference(bltStmt).setReferee('referee').build();
+       // let bltStmt = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference('referer').setReferee('').build();
+       // let bltStmt2 = new StatementBuilder().setType('b').setRoot('c').setBranch('d').setReference(bltStmt).setReferee('referee').build();
         //console.log(expStmt);
         //console.log(bltStmt2);
