@@ -27,7 +27,8 @@ crude oil advanced and base metals have soared, with European smelters the lates
     new Statement().setId('Goldman-20211015')
     .setDesc('Goldman Is ‘Doubling Down’ on Technology Investing, Dees Says')
     .setUrl('https://www.bloomberg.com/news/articles/2021-10-13/goldman-is-doubling-down-on-technology-investing-dees-says')
-    ])
+    ]).setType("need verification and validation with historical data before putting real money")
+    
     ,new Statement().setId('IMF')
     .setDesc("Treasury Secretary Janet Yellen warned that a scandal over \
 the credibility of rankings of countries’ business climates could hurt \
@@ -36,6 +37,7 @@ institutions take strong actions to prevent misconduct and support whistle-blowe
             .setUrl("https://www.bloomberg.com/news/articles/2021-10-14/yellen-says-imf-world-bank-risk-loss-of-confidence-from-scandal?srnd=fixed-income")
             ,FinNews, ETF_Tickets = {
             desc: 'spy ETFs',
+            db:'https://etfdb.com/',
             US_ETF_Sectors:[
             'Energy XLE',
             'Financial Service XLF',
@@ -96,7 +98,10 @@ institutions take strong actions to prevent misconduct and support whistle-blowe
     ETFInv.setReference(ETFREF);
     ETFREF.setReferee(ETFInv);
    // console.log(ETFREF)
-   Ibank.setReference(ETF_Tickets);
+   Ibank.setReference([ETF_Tickets, {
+        website: 'investing.com investing calendar',
+        url: 'https://www.investing.com/economic-calendar'
+    }]);
     console.log(ETFInv)
         // ReactDOM.render(<App />, document.getElementById("root"));
     </script>
