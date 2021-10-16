@@ -17,13 +17,14 @@ class Rectangle {
    // console.log(square.area);
 
     class Statement {
-        constructor(id, type, root, branch, reference, referee, desc)
+        constructor(id, type, root, branch, reference, referee, desc, challenges)
         {
             this.id = id;
             this.desc = desc;
             this.type = type;
             this.root = root;
             this.branch = branch;
+            this.challenges = challenges
             this.referee=referee;
             this.reference=reference;
         };
@@ -61,6 +62,10 @@ class Rectangle {
             this.referee = referee;
             return this;
         };
+        setChallenges(challenges){
+            this.challenges = challenges;
+            return this;
+        }
 
         
     }
