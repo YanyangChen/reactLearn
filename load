@@ -1,0 +1,3 @@
+cat FTP.js bible.js > load.js
+node -i -e "$(< load.js)" 
+rm load.js
