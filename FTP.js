@@ -15,7 +15,7 @@ class Rectangle {
 
     const square = new Rectangle(10, 10);
    // console.log(square.area);
-
+   //var myStatement = function() {
     class Statement {
         constructor(id, type, root, branch, reference, referee, desc, challenges)
         {
@@ -69,6 +69,7 @@ class Rectangle {
 
         
     }
+//}
 
     
 
